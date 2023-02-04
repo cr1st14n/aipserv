@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,19 +12,19 @@ class loginController extends Controller
         $this->middleware('guest')->except('cerrarSession');
     }
 
-    public function FunctionName(Request $request)
+    public function login(Request $request)
     {
-        $verusu = User::where('codUser', $request->input('codUser'))->first();
-        if ($verusu == null) {
+        $usuario = User::where('usu_codigo', $request->input('usu_codigo'))->value('usu_codigo');
+        if ($usuario == null) {
             return 'noUser';
         }
-        $verusu = request()->only('coduser', 'password');
-        if (Auth::attempt($verusu)) {
-            return 'success';
-        } else {
-            return 'noPass';
+        $credenciales = request()->only('usu_codigo', 'password');
+        if (Auth::attempt($credenciales)) {
+            return 'accepted';
         }
-        return 'failServ';
+        return 'noPass';
+
+        
     }
     public function cerrarSession()
     {

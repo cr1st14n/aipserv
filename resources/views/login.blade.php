@@ -48,23 +48,65 @@
                             <a href="../index.html"><img src="" alt=""></a>
                         </div>
                         <h3><strong>NAABOL | </strong> PUBLICACIÓN DE INFORMACIÓN AERONAUTICA</h3>
-                        <form id="formLogin" onsubmit=" event.preventDefault(); login_1()">
-                            @csrf
-                            <p>Inicio de sessión</p>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="codusr" placeholder="Codigo"
-                                    required="" value="">
-                                <i class="ik ik-user"></i>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Contraseña"
-                                    required="" value="">
-                                <i class="ik ik-lock"></i>
-                            </div>
-                            <div class="sign-btn text-center">
-                                <button type="submit" class="btn btn-theme">INGRESAR</button>
-                            </div>
-                        </form>
+                        <div class="row">
+                            <div class=" col-6"><button class="btn btn-block btn-sm btn-theme"
+                                    onclick="showform(1)">INICIAR SESSIÓN</button></div>
+                            <div class=" col-6"><button class="btn btn-block btn-sm btn-purple"
+                                    onclick="showform(2)">REGISTRARSE</button></div>
+
+                        </div>
+                        <div id="objLogin" style="display: block">
+                            <form id="formLogin">
+                                @csrf
+                                <p>Inicio de sessión</p>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="usu_codigo"
+                                        placeholder="Codigo de usuario" required="" value="">
+                                    <i class="ik ik-user"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password" placeholder="Contraseña"
+                                        required="" value="">
+                                    <i class="ik ik-lock"></i>
+                                </div>
+                                <div class="sign-btn text-center">
+                                    <button type="submit" class="btn btn-theme">INGRESAR</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="objRegister" style="display: none">
+                            <form id="formRegis" onsubmit="event.preventDefault(); registerClie()">
+                                @csrf
+                                <p>Registro de Cliente</p>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="usu_nombre" placeholder="Nombre Completo"
+                                        required="" value="" required>
+                                    <i class="ik ik-user"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="usu_empresa" placeholder="Nombre Empresa"
+                                        required="" value="" required>
+                                    <i class="ik ik-user"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="usu_telf" placeholder="# Telefonico"
+                                        required="" value="" required>
+                                    <i class="ik ik-user"></i>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="Correo Electronico"
+                                        placeholder="Correro Electronico" required="" value="" required>
+                                    <i class="ik ik-lock"></i>
+                                </div>
+                                <p>
+                                    Una ves enviada su solicitud, el Personal acargo se contactara para proceder con su
+                                    correspondiente Pago y entrega de Credenciales de Acceso
+                                </p>
+                                <div class="sign-btn text-center">
+                                    <button type="submit" class="btn btn-purple">REGISTRARSE</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,19 +122,40 @@
     <script src="{{ asset('resources/plantilla/plugins/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
     <!-- notific8 -->
     <script>
+        function showform(tipo) {
+            div1 = document.getElementById('objLogin');
+            div2 = document.getElementById('objRegister');
+            if (tipo == 1) {
+                div1.style.display = 'block';
+                div2.style.display = 'none';
+
+            }
+            if (tipo == 2) {
+                div1.style.display = 'none';
+                div2.style.display = 'block';
+            }
+        }
+
+
+        $('#formLogin').submit(function(e) {
+            e.preventDefault();
+            login_1()
+        });
+
         function login_1() {
-            console.log($('#formLogin').serialize());
             $.ajax({
-                type: "GET",
+                type: "post",
                 url: "log1",
                 data: $('#formLogin').serialize(),
                 success: function(e) {
                     console.log(e);
-                    if (e == 'success' ) {
-                        window.location.href = 'home/';
+                    if (e == 'accepted') {
+
+                        window.location.href = 'doc';
+
                     } else if (e == 'noUser') {
                         params = {
-                            heading: "Alerta!",
+
                             text: 'Usuario no Registrado',
                             showHideTransition: "slide",
                             icon: "info",
@@ -102,7 +165,7 @@
                         $.toast(params);
                     } else if (e == 'noPass') {
                         params = {
-                            heading: "Alerta!",
+
                             text: 'Contraseña Incorrecta!',
                             showHideTransition: "slide",
                             icon: "info",
@@ -114,7 +177,39 @@
                 }
             });
         }
+
+        let registerClie = () => {
+            $.ajax({
+                type: "post",
+                url: "user/registerCliente",
+                data: $('#formRegis').serialize(),
+                success: function(response) {
+                    if (response.est == 'success') {
+                        params = {
+                            text: 'Informacion Enviada!',
+                            showHideTransition: "slide",
+                            icon: "info",
+                            loaderBg: "#46c35f",
+                            position: "top-right",
+                        };
+                        $.toast(params);
+                        $('#formRegis').trigger('reset');
+                        showform(1);
+                        return
+                    }
+                    params = {
+                        text: 'ERROR!',
+                        showHideTransition: "slide",
+                        icon: "danger",
+                        loaderBg: "#46c35f",
+                        position: "top-right",
+                    };
+                    $.toast(params);
+                }
+            });
+        }
     </script>
+
 </body>
 
 </html>

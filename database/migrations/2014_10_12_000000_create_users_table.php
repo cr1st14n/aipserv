@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('usu_codigo')->unique();
-            $table->string('email')->unique();
+            $table->string('usu_codigo')->nullable();
+            $table->string('email')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('usu_fechaInicio')->nullable();
             $table->date('usu_fechaFinal')->nullable();
             $table->string('usu_tipoCuenta')->nullable();
+            $table->string('usu_telf')->nullable();
             
             $table->boolean('ca_estado')->nullable();
             $table->string('ca_user')->nullable();
