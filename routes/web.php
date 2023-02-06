@@ -31,6 +31,7 @@ Route::get('doc',function ()
 {
     return view('document.homeFile');
 })->middleware('auth')->name('inicio1');
+
 Route::prefix('user')->group(function () {
      Route::get('/',[usuarioController::class,'index']);
      Route::get('/view',[usuarioController::class,'viewuser']);
