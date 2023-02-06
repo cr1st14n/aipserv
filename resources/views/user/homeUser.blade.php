@@ -161,9 +161,12 @@
                             </div><!-- col-4 -->
                             <div class="col-md-6">
                                 <div class="form-group bd-t-0-force">
-                                    <label class="form-control-label">Codigo: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" name="usu_codigo"
-                                        placeholder="Codigo de Inicio" required>
+                                    <label class="form-control-label">Tipo de Cuenta: <span
+                                            class="tx-danger">*</span></label>
+                                    <select name="usu_tipoCuenta" id="" class=" form-control">
+                                        <option value="cliente">Cliente</option>
+                                        <option value="administrador">Administrador</option>
+                                    </select>
                                 </div>
                             </div><!-- col-8 -->
                             <div class="col-md-6">
@@ -177,7 +180,7 @@
                                 <div class="form-group mg-md-l--1 bd-t-0-force">
                                     <label class="form-control-label mg-b-0-force">Contraseña: <span
                                             class="tx-danger">*</span></label>
-                                    <input class=" form-control" type="password" required>
+                                    <input class=" form-control" type="password" name="password" required>
                                 </div>
                             </div><!-- col-4 -->
                         </div><!-- row -->

@@ -29,7 +29,7 @@ class usuarioController extends Controller
         $new->usu_empresa = $request->input('usu_empresa');
         $new->usu_fechaInicio = Carbon::now();
         $new->usu_fechaFinal = $request->input('usu_fechaFinal');
-        $new->usu_tipoCuenta = 'cliente';
+        $new->usu_tipoCuenta = $request->input('usu_tipoCuenta');
         $res = $new->save();
         if ($res) {
             return ['est' => 'success', 'data' => $new];

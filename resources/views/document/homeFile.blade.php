@@ -52,7 +52,7 @@
         <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
         <div class="br-sideleft-menu">
             @if (Auth::User()->usu_tipoCuenta != 'cliente')
-                <a  href="#" class="br-menu-link">
+                <a onclick="view_home_user()" href="#" class="br-menu-link">
                     <div class="br-menu-item">
                         <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
                         <span class="menu-item-label">Administrar</span>
