@@ -30,7 +30,7 @@
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard." />
     <meta name="author" content="ThemePixels" />
 
-    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+    <title>NAABOL | PUBLICACIÓN DE INFORMACIÓN AERONAUTICA</title>
 
     <!-- vendor css -->
     <link href="{{ asset('resources/template/lib/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
@@ -152,7 +152,7 @@
                     <a onclick="funAct(33)" href="#" class="nav-link">SLCB</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(34)" href="#" class="nav-link">SLCP</a>
+                    <a onclick="funAct(34)" href="#" class="nav-link">SLLP</a>
                 </li>
                 <li class="nav-item">
                     <a onclick="funAct(35)" href="#" class="nav-link">SLVR</a>
