@@ -102,25 +102,25 @@
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
                 <li class="nav-item">
-                    <a onclick="funAct(20)" href="#" class="nav-link">Enr 0</a>
+                    <a onclick="funAct(20)" href="#" class="nav-link" translate="no">Enr 0</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(21)" href="#" class="nav-link">Enr 1</a>
+                    <a onclick="funAct(21)" href="#" class="nav-link" translate="no">Enr 1</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(22)" href="#" class="nav-link">Enr 2</a>
+                    <a onclick="funAct(22)" href="#" class="nav-link" translate="no">Enr 2</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(23)" href="#" class="nav-link">Enr 3</a>
+                    <a onclick="funAct(23)" href="#" class="nav-link" translate="no">Enr 3</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(24)" href="#" class="nav-link">Enr 4</a>
+                    <a onclick="funAct(24)" href="#" class="nav-link" translate="no">Enr 4</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(25)" href="#" class="nav-link">Enr 5</a>
+                    <a onclick="funAct(25)" href="#" class="nav-link" translate="no">Enr 5</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(26)" href="#" class="nav-link">Enr 6</a>
+                    <a onclick="funAct(26)" href="#" class="nav-link" translate="no">Enr 6</a>
                 </li>
             </ul>
             <a href="#" class="br-menu-link">
@@ -133,10 +133,10 @@
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
                 <li class="nav-item">
-                    <a onclick="funAct(30)" href="#" class="nav-link">Ad 0</a>
+                    <a onclick="funAct(30)" href="#" class="nav-link" translate="no">Ad 0</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct(31)" href="#" class="nav-link">Ad 1</a>
+                    <a onclick="funAct(31)" href="#" class="nav-link" translate="no">Ad 1</a>
                 </li>
             </ul>
             <a href="#" class="br-menu-link">
@@ -168,115 +168,115 @@
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
                 <li class="nav-item">
-                    <a onclick="funAct('SLAG')" href="#" class="nav-link">SLAG</a>
+                    <a onclick="funAct('SLAG')" href="#" class="nav-link" translate="no">SLAG</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLAL')" href="#" class="nav-link">SLAL</a>
+                    <a onclick="funAct('SLAL')" href="#" class="nav-link" translate="no">SLAL</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLAP')" href="#" class="nav-link">SLAP</a>
+                    <a onclick="funAct('SLAP')" href="#" class="nav-link" translate="no">SLAP</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLAS')" href="#" class="nav-link">SLAS</a>
+                    <a onclick="funAct('SLAS')" href="#" class="nav-link" translate="no">SLAS</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLBJ')" href="#" class="nav-link">SLBJ</a>
+                    <a onclick="funAct('SLBJ')" href="#" class="nav-link" translate="no">SLBJ</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLCA')" href="#" class="nav-link">SLCA</a>
+                    <a onclick="funAct('SLCA')" href="#" class="nav-link" translate="no">SLCA</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLCC')" href="#" class="nav-link">SLCC</a>
+                    <a onclick="funAct('SLCC')" href="#" class="nav-link" translate="no">SLCC</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLCO')" href="#" class="nav-link">SLCO</a>
+                    <a onclick="funAct('SLCO')" href="#" class="nav-link" translate="no">SLCO</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLCP')" href="#" class="nav-link">SLCP</a>
+                    <a onclick="funAct('SLCP')" href="#" class="nav-link" translate="no">SLCP</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLET')" href="#" class="nav-link">SLET</a>
+                    <a onclick="funAct('SLET')" href="#" class="nav-link" translate="no">SLET</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLGM')" href="#" class="nav-link">SLGM</a>
+                    <a onclick="funAct('SLGM')" href="#" class="nav-link" translate="no">SLGM</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLHI')" href="#" class="nav-link">SLHI</a>
+                    <a onclick="funAct('SLHI')" href="#" class="nav-link" translate="no">SLHI</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLJE')" href="#" class="nav-link">SLJE</a>
+                    <a onclick="funAct('SLJE')" href="#" class="nav-link" translate="no">SLJE</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLJO')" href="#" class="nav-link">SLJO</a>
+                    <a onclick="funAct('SLJO')" href="#" class="nav-link" translate="no">SLJO</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLJV')" href="#" class="nav-link">SLJV</a>
+                    <a onclick="funAct('SLJV')" href="#" class="nav-link" translate="no">SLJV</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLMG')" href="#" class="nav-link">SLMG</a>
+                    <a onclick="funAct('SLMG')" href="#" class="nav-link" translate="no">SLMG</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLOR')" href="#" class="nav-link">SLOR</a>
+                    <a onclick="funAct('SLOR')" href="#" class="nav-link" translate="no">SLOR</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLPO')" href="#" class="nav-link">SLPO</a>
+                    <a onclick="funAct('SLPO')" href="#" class="nav-link" translate="no">SLPO</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLPS')" href="#" class="nav-link">SLPS</a>
+                    <a onclick="funAct('SLPS')" href="#" class="nav-link" translate="no">SLPS</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLRA')" href="#" class="nav-link">SLRA</a>
+                    <a onclick="funAct('SLRA')" href="#" class="nav-link" translate="no">SLRA</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLRB')" href="#" class="nav-link">SLRB</a>
+                    <a onclick="funAct('SLRB')" href="#" class="nav-link" translate="no">SLRB</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLRI')" href="#" class="nav-link">SLRI</a>
+                    <a onclick="funAct('SLRI')" href="#" class="nav-link" translate="no">SLRI</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLRQ')" href="#" class="nav-link">SLRQ</a>
+                    <a onclick="funAct('SLRQ')" href="#" class="nav-link" translate="no">SLRQ</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLRY')" href="#" class="nav-link">SLRY</a>
+                    <a onclick="funAct('SLRY')" href="#" class="nav-link" translate="no">SLRY</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSA')" href="#" class="nav-link">SLSA</a>
+                    <a onclick="funAct('SLSA')" href="#" class="nav-link" translate="no">SLSA</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSB')" href="#" class="nav-link">SLSB</a>
+                    <a onclick="funAct('SLSB')" href="#" class="nav-link" translate="no">SLSB</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSI')" href="#" class="nav-link">SLSI</a>
+                    <a onclick="funAct('SLSI')" href="#" class="nav-link" translate="no">SLSI</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSM')" href="#" class="nav-link">SLSM</a>
+                    <a onclick="funAct('SLSM')" href="#" class="nav-link" translate="no">SLSM</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSR')" href="#" class="nav-link">SLSR</a>
+                    <a onclick="funAct('SLSR')" href="#" class="nav-link" translate="no">SLSR</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLSV')" href="#" class="nav-link">SLSV</a>
+                    <a onclick="funAct('SLSV')" href="#" class="nav-link" translate="no">SLSV</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLTI')" href="#" class="nav-link">SLTI</a>
+                    <a onclick="funAct('SLTI')" href="#" class="nav-link" translate="no">SLTI</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLTJ')" href="#" class="nav-link">SLTJ</a>
+                    <a onclick="funAct('SLTJ')" href="#" class="nav-link" translate="no">SLTJ</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLTR')" href="#" class="nav-link">SLTR</a>
+                    <a onclick="funAct('SLTR')" href="#" class="nav-link" translate="no">SLTR</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLUY')" href="#" class="nav-link">SLUY</a>
+                    <a onclick="funAct('SLUY')" href="#" class="nav-link" translate="no">SLUY</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLVG')" href="#" class="nav-link">SLVG</a>
+                    <a onclick="funAct('SLVG')" href="#" class="nav-link" translate="no">SLVG</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLVM')" href="#" class="nav-link">SLVM</a>
+                    <a onclick="funAct('SLVM')" href="#" class="nav-link" translate="no">SLVM</a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="funAct('SLYA')" href="#" class="nav-link">SLYA</a>
+                    <a onclick="funAct('SLYA')" href="#" class="nav-link" translate="no">SLYA</a>
                 </li>
             </ul>
             <a href="#" class="br-menu-link">
