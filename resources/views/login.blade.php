@@ -43,6 +43,19 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <p style="font-size: 20px; text-align:right">
+                                PLAN DE <br> CONTINGENCIA <strong style="color: red">ATS</strong>
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#modaldemo3"
+                                style="width: 150px;
+                                height: 60px;"> <i class="fa fa-solid fa-download fa-3x"></i> | <i class="fa fa-file-pdf fa-3x"></i> </button>
+                        </div>
+                    </div>
+                    <hr>
                     <div class="authentication-form mx-auto">
                         <div class="logo-centered">
                             <a href="../index.html"><img src="" alt=""></a>
@@ -69,28 +82,29 @@
                                         required="" value="">
                                     <i class="ik ik-lock"></i>
                                 </div>
-                                <div class="sign-btn text-center">
+                                <div class="sign-btn text-center" style="color:red">
                                     <button type="submit" class="btn btn-theme">INGRESAR</button>
                                 </div>
                             </form>
+
                         </div>
                         <div id="objRegister" style="display: none">
                             <form id="formRegis" onsubmit="event.preventDefault(); registerClie()">
                                 @csrf
                                 <p>Registro de Cliente</p>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="usu_nombre" placeholder="Nombre Completo"
-                                        required="" value="" required>
+                                    <input type="text" class="form-control" name="usu_nombre"
+                                        placeholder="Nombre Completo" required="" value="" required>
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="usu_empresa" placeholder="Nombre Empresa"
-                                        required="" value="" required>
+                                    <input type="text" class="form-control" name="usu_empresa"
+                                        placeholder="Nombre Empresa" required="" value="" required>
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="usu_telf" placeholder="# Telefonico"
-                                        required="" value="" required>
+                                    <input type="text" class="form-control" name="usu_telf"
+                                        placeholder="# Telefonico" required="" value="" required>
                                     <i class="ik ik-user"></i>
                                 </div>
                                 <div class="form-group">
@@ -102,6 +116,7 @@
                                     Una ves enviada su solicitud, el Personal acargo se contactara para proceder con su
                                     correspondiente Pago y entrega de Credenciales de Acceso
                                 </p>
+
                                 <div class="sign-btn text-center">
                                     <button type="submit" class="btn btn-purple">REGISTRARSE</button>
                                 </div>
@@ -112,7 +127,29 @@
             </div>
         </div>
     </div>
+    <!-- LARGE MODAL -->
+    <div id="modaldemo3" class="modal fade">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content tx-size-sm">
+                <div class="modal-header pd-x-20">
+                    <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">PLAN DE CONTINGENCIA "ATS"</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body pd-20">
+                    <h4 class=" lh-3 mg-b-20"><a href="" class="tx-inverse hover-primary"> ...</a></h4>
+                    <iframe src="{{ asset('resources/pdf/planContinfenciaATS.pdf') }}" width="100%"
+                        height="600px"></iframe>
 
+                </div><!-- modal-body -->
+                <div class="modal-footer" hidden>
+                    <button type="button" class="btn btn-primary tx-size-xs">Save changes</button>
+                    <button type="button" class="btn btn-secondary tx-size-xs" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div><!-- modal-dialog -->
+    </div><!-- modal -->
     <script src="{{ asset('resources/plantilla/src/js/vendor/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('resources/plantilla/plugins/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('resources/plantilla/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -122,6 +159,10 @@
     <script src="{{ asset('resources/plantilla/plugins/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
     <!-- notific8 -->
     <script>
+        // setTimeout(() => {
+        //   $('#modaldemo3').modal('show')
+        //}, 500);
+
         function showform(tipo) {
             div1 = document.getElementById('objLogin');
             div2 = document.getElementById('objRegister');
