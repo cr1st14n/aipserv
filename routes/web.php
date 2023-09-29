@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\usuarioController;
 use Illuminate\Support\Facades\Route;
@@ -20,21 +21,27 @@ Route::get('/', function () {
 })->middleware('guest')->name('login');
 
 Route::any('log1', [loginController::class, 'login']);
-Route::post('logout',[loginController::class,'cerrarSession']);
+Route::post('logout', [loginController::class, 'cerrarSession']);
 
 
 Route::get('home', function () {
     return  view('home');
 })->middleware('auth');
 
-Route::get('doc',function ()
-{
+Route::get('doc', function () {
     return view('document.homeFile');
 })->middleware('auth')->name('inicio1');
 
 Route::prefix('user')->group(function () {
-     Route::get('/',[usuarioController::class,'index']);
-     Route::get('/view',[usuarioController::class,'viewuser']);
-     Route::any('/makeUser',[usuarioController::class,'makeUser']);
-     Route::post('registerCliente',[usuarioController::class,'registerClie']);
+    Route::get('/', [usuarioController::class, 'index']);
+    Route::get('/view', [usuarioController::class, 'viewuser']);
+    Route::any('/makeUser', [usuarioController::class, 'makeUser']);
+    Route::post('registerCliente', [usuarioController::class, 'registerClie']);
+});
+Route::prefix('document')->group(function () {
+    Route::get('list_1', [DocumentController::class, 'list_1']);
+    Route::get('data_list_1', [DocumentController::class, 'data_list_1']);
+    Route::get('showPDF_1/{id}', [DocumentController::class, 'showPDF_1']);
+    Route::get('register_1', [DocumentController::class, 'register_1']);
+    Route::post('create', [DocumentController::class, 'create']);
 });
