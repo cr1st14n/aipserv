@@ -19,10 +19,10 @@ return new class extends Migration
 
             $table->string('doc_descripcion');
             $table->string('doc_tipo');
-            $table->longText('doc_pdf');
-
-            $table->integer('ca_usu');
-            $table->boolean('ca_est');
+            $table->string('doc_pdf'); // Este campo almacenará el nombre del archivo PDF
+            
+            $table->unsignedBigInteger('ca_usu');
+            $table->integer('ca_est');
         });
     }
 

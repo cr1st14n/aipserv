@@ -20,7 +20,7 @@ async function showPDF_1(id) {
         }
         const query_response = await query.json();
         console.log(query_response);
-        showModalGenera_0001('asdf','asdf')
+        showModalGenera_0001(2, query_response.data)
     } catch (error) {
         console.log(error);
     }
@@ -47,6 +47,7 @@ function data_make_row(e) {
         <th scope="row">AR-${e.id}</th>
         <td>${e.created_at}</td>
         <td>${e.doc_descripcion}</td>
+        <td>${e.doc_tipo}</td>
         <td>
             <button class="btn btn-danger" onClick="showPDF_1(${e.id})"><i class="fa fa-file-pdf-o"></i></button>
             <button class="btn btn-danger"><i class="fa fa-table"></i></button>
@@ -70,32 +71,31 @@ function register_data() {
     let tipo = document.getElementById('tipo').value;
     let pdfFile = document.getElementById('pdf').files[0];
     let csrfToken = document.head.querySelector('meta[name="csrf-token"]').content;
+
     if (descripcion && tipo && pdfFile) {
-        var reader = new FileReader();
+        var formData = new FormData();
+        formData.append('doc_descripcion', descripcion);
+        formData.append('doc_tipo', tipo);
+        formData.append('doc_pdf', pdfFile); // Aquí se agrega el archivo directamente
 
-        reader.onload = function () {
-            var pdfData = reader.result.split(',')[1]; // Obtener los datos en base64
-
-            var formData = new FormData();
-            formData.append('doc_descripcion', descripcion);
-            formData.append('doc_tipo', tipo);
-            formData.append('doc_pdf', pdfData);
-
-            fetch('document/create', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': csrfToken
-                }
+        fetch('document/create', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Respuesta del servidor:', data);
+                $('#form_1').trigger('reset');
+                $.notify('Registrado Exitosamente', 'success')
+                $("#btnRegister").notify(
+                    "Registrado!",'success',
+                    { position: "right" }
+                );
             })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Respuesta del servidor:', data);
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        reader.readAsDataURL(pdfFile);
+            .catch(error => console.error('Error:', error));
     } else {
         alert('Por favor completa todos los campos');
     }

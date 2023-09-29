@@ -38,7 +38,7 @@
                     </div><!-- col-4 -->
                 </div><!-- row -->
                 <div class="form-layout-footer bd pd-20 bd-t-0">
-                    <button class="btn btn-info" type="submit">Registrar</button>
+                    <button class="btn btn-info" type="submit" id="btnRegister">Registrar</button>
                     {{-- <button class="btn btn-secondary"></button> --}}
                 </div><!-- form-group -->
             </div><!-- form-layout -->

@@ -731,6 +731,7 @@
     <script src="{{ asset('resources/template/lib/highlightjs/highlight.pack.js') }}"></script>
 
     <script src="{{ asset('resources/template/js/bracket.js') }}"></script>
+    <script src="{{ asset('resources/plantilla/notify.js') }}"></script>
     <script src="{{ asset('public/AppJs/inicio.js') }}"></script>
     <script src="{{ asset('public/AppJs/mod_1.js') }}"></script>
 </body>

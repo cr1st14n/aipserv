@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'usu_codigo' => 'NAABOl',
-        //     'email' => 'test@example.com',
-        //     'password' => encrypt('naabol.aero'),
-        // ]);
+        \App\Models\User::factory()->create([
+            'usu_codigo' => 'NAABOL',
+            'email' => 'test@example.com',
+            'password' => bcrypt('naabol'),
+        ]);
     }
 }

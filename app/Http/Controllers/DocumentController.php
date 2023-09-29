@@ -33,17 +33,22 @@ class DocumentController extends Controller
             $request->validate([
                 'doc_descripcion' => 'required|string|max:255',
                 'doc_tipo' => 'required|string|max:255',
-                'doc_pdf' => 'required|string', // Esto puede variar dependiendo de cómo manejes el PDF en tu aplicación
+                'doc_pdf' => 'required|mimes:pdf',
             ]);
 
             $new = new Document();
             $new->doc_descripcion = $request->input('doc_descripcion');
             $new->doc_tipo = $request->input('doc_tipo');
-            $new->doc_pdf = $request->input('doc_pdf');
+
+            if ($request->hasFile('doc_pdf')) {
+                $pdfFile = $request->file('doc_pdf');
+                $pdfFileName = $pdfFile->getClientOriginalName();
+                $pdfFile->move(public_path('pdfs'), $pdfFileName); // Guardar en el directorio 'pdfs'
+                $new->doc_pdf = $pdfFileName;
+            }
 
             $new->ca_usu = Auth::user()->id;
             $new->ca_est = 1;
-
 
             $new->save();
 
@@ -58,6 +63,8 @@ class DocumentController extends Controller
             ], 500);
         }
     }
+
+
     function list_1()
     {
         return view('document.list');
@@ -81,11 +88,11 @@ class DocumentController extends Controller
     function showPDF_1($id)
     {
         try {
-            $pdf = document::where('id', $id)->first()->value('doc_pdf');
+            $pdf = document::where('id', $id)->first();
 
             return response()->json([
                 'message' => 'success',
-                'data' => $pdf,
+                'data' => $pdf->doc_pdf,
             ], 201);
         } catch (\Exception $e) {
             return response()->json([
